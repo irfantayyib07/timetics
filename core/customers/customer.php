@@ -281,19 +281,19 @@ class Customer {
      */
     public function save() {
         // Get the currently authenticated user
-        $current_user = wp_get_current_user();
+        // $current_user = wp_get_current_user();
 
         // Ensure the user is logged in
-        if ( ! $current_user->ID ) {
-            $this->error = new \WP_Error( 'not_logged_in', 'You need to be logged in to update your profile.' );
-            return  $this->error;
-        }
+        // if ( ! $current_user->ID ) {
+        //     $this->error = new \WP_Error( 'not_logged_in', 'You need to be logged in to update your profile.' );
+        //     return  $this->error;
+        // }
 
         // Ensure the user can only update their own profile
-        if ( $this->id && $this->id !== $current_user->ID ) {
-            $this->error = new \WP_Error('unauthorized', 'You are not authorized to update this profile.' ); 
-            return $this->error;
-        }
+        // if ( $this->id && $this->id !== $current_user->ID ) {
+        //     $this->error = new \WP_Error('unauthorized', 'You are not authorized to update this profile.' ); 
+        //     return $this->error;
+        // }
 
         $args = [
             'first_name' => $this->data['first_name'],
